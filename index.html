@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Bootstrap CSS -->
+     <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css"
+    />
+
+    <title>FarmaSNBot</title>
+    <!-- <link rel="icon" type="image/png" href="/farmasnbot.png" />-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JCM3T10P85"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JCM3T10P85");
+    </script>
+  </head>
+
+  <body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="farmasnbot.png"
+            class="me-20"
+            height="30"
+            alt=""
+            loading="lazy"
+          />
+          <small>Farmacias de turno</small>
+          <small> San Nicolas de los Arroyos</small>
+        </a>
+      </div>
+    </nav>
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+
+    <div class="container ml-0" style="max-width: 25rem">
+      <div id="turno"></div>
+
+      <!--<input class="form-control mt-1" 
+    id="date"onchange="handler(event);" 
+    name="date" placeholder="MM/DD/YYYY" 
+    type="text" />-->
+
+      <div id="map" class="map mt-1"></div>
+
+      <div class="mt-1" id="respuesta"></div>
+    </div>
+
+    <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+    <!-- Include jQuery -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+
+    <!-- Include Date Range Picker -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
+    />
+
+    <script>
+      $(document).ready(function () {
+        var date_input = $('input[name="date"]'); //our date input has the name "date"
+        var container =
+          $(".bootstrap-iso form").length > 0
+            ? $(".bootstrap-iso form").parent()
+            : "body";
+        date_input.datepicker({
+          format: "mm/dd/yyyy",
+          container: container,
+          todayHighlight: true,
+          autoclose: true,
+        });
+      });
+    </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="app.js"></script>
+
+    <footer class="bg-dark text-center text-white">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        Agustin Benegas
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>
